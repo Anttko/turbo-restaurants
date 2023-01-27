@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Restaurants app</string>
+    <string name="restaurant_name">Restaurants name</string>
+    <string name="description">Restaurant description</string>
+    <string name="restaurant_image">Restaurant image</string>
+    <string name="app_header">New venues</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="restaurant_description">Restaurant description</string>
+
+</resources>

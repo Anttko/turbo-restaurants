@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/restaurantsListFragment">
+    <fragment
+        android:id="@+id/restaurantsListFragment"
+        android:name="com.anttko.restaurantsapp.ui.RestaurantsListFragment"
+        android:label="RestaurantsListFragment" >
+        <action
+            android:id="@+id/action_restaurantsListFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.anttko.restaurantsapp.ui.RestaurantFragment"
+        android:label="RestaurantFragment" />
+</navigation>
