@@ -1,5 +1,6 @@
 package com.anttko.restaurantsapp
 
+import android.widget.ImageButton
 import android.widget.ImageView
 
 import androidx.databinding.BindingAdapter
@@ -28,26 +29,8 @@ fun bindImage(imgView: ImageView, image: String) {
         .transform(transformation)
         .into(imgView)
 }
-
-/**
- *
- * @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: Restaurants?) {
-val adapter = recyclerView.adapter as RestaurantsAdapter
-adapter.submitList(data)
+@BindingAdapter("favorite")
+fun bindFavorite(favBtn: ImageButton, favorite: Boolean) {
+    favBtn.setImageResource(if (favorite) R.drawable.ic_baseline_favorite_24 else R.drawable.ic_baseline_favorite_border_24)
 }
 
-@BindingAdapter("image")
-fun bindImage(imgView: ImageView, image: String) {
-Glide.with(imgView)
-.load(image)
-.circleCrop()
-.into(imgView)
-}
-
- *
- *
- *
- *
- *
- */

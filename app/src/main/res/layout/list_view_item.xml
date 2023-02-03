@@ -2,44 +2,38 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
         <variable
-            name="venues"
+            name="items"
             type="com.anttko.restaurantsapp.data.Item" />
         <variable
             name="clickListener"
             type="com.anttko.restaurantsapp.ui.RestaurantsListener" />
     </data>
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="360dp"
         android:layout_height="88dp"
-
-        android:onClick="@{() -> clickListener.onClick(venues)}"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp"
+        android:layout_margin="0dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
        >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutcard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
          >
-
             <TextView
                 android:id="@+id/restaurant_name"
-                android:layout_width="216dp"
                 android:layout_height="20dp"
+                android:layout_width="216dp"
                 android:layout_marginStart="88dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="56dp"
                 android:layout_marginBottom="43dp"
-
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
-                android:text="@{venues.venue.name}"
+                android:text="@{items.venue.name}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textFontWeight="700"
                 android:textSize="14sp"
@@ -52,7 +46,7 @@
 
             <ImageView
                 android:id="@+id/restaurant_image"
-                image="@{venues.image.url}"
+                image="@{items.image.url}"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_marginStart="16dp"
@@ -68,15 +62,15 @@
 
             <TextView
                 android:id="@+id/descriptionTextView"
-                android:layout_width="216dp"
                 android:layout_height="16dp"
+                android:layout_width="216dp"
                 android:layout_marginTop="47dp"
                 android:layout_marginBottom="25dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:letterSpacing="0.05"
                 android:lineSpacingExtra="16dp"
-                android:text="@{venues.venue.short_description}"
+                android:text="@{items.venue.short_description}"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +80,9 @@
                 tools:text="@string/restaurant_description" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/favoriteButton"
+                favorite="@{items.favorite}"
+                android:onClick="@{() -> clickListener.onClick(items)}"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="35dp"
@@ -98,19 +94,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.483"
-                app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
-
+                app:srcCompat="@drawable/favorite_button_selector"
+                />
             <View
+                android:id="@+id/divider"
                 android:layout_width="272dp"
                 android:layout_height="1dp"
-                android:layout_margin="16dp"
-                android:background="@color/grey"
+                android:layout_margin="0dp"
+                android:background="@color/pepper"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </com.google.android.material.card.MaterialCardView>
 
 </layout>

@@ -8,11 +8,8 @@
         android:name="com.anttko.restaurantsapp.ui.RestaurantsListFragment"
         android:label="RestaurantsListFragment" >
         <action
-            android:id="@+id/action_restaurantsListFragment_to_restaurantFragment"
-            app:destination="@id/restaurantFragment" />
+            android:id="@+id/action_restaurantsListFragment_self2"
+            app:destination="@id/restaurantsListFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/restaurantFragment"
-        android:name="com.anttko.restaurantsapp.ui.RestaurantFragment"
-        android:label="RestaurantFragment" />
+
 </navigation>

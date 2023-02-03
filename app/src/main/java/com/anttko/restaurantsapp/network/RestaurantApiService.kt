@@ -1,11 +1,8 @@
 package com.anttko.restaurantsapp.network
 
-import android.util.Log
 import com.anttko.restaurantsapp.data.Restaurants
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import retrofit2.Call
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -27,8 +24,8 @@ private val retrofit = Retrofit.Builder()
 interface RestaurantsApiService {
     @GET("v1/pages/restaurants")
     suspend fun getRestaurants(
-        @Query("lat") lat: Double,
-        @Query("lon") lon: Double
+        @Query("lat") lat: Double?,
+        @Query("lon") lon: Double?
     ): Restaurants
 }
 

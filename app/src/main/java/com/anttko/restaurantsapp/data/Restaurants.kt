@@ -1,9 +1,6 @@
 package com.anttko.restaurantsapp.data
 
 import com.google.gson.annotations.SerializedName
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 data class Restaurants(
     val created: Created? = null,
     val expires_in_seconds: Int? = null,
@@ -50,6 +47,7 @@ data class Value(
 )
 
 data class Item(
+    var favorite: Boolean? = false,
     val description: String? = null,
     val filtering: FilteringX? = null,
     val image: Image? = null,
